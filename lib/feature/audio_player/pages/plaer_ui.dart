@@ -12,8 +12,10 @@ class _DetaileplayerState extends State<Detaileplayer> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: appcolor.mbackground,
       body: Stack(
         children: [
           Positioned(
@@ -29,18 +31,85 @@ class _DetaileplayerState extends State<Detaileplayer> {
             top: 0,
             right: 0,
             left: 0,
-             child: AppBar(
-              backgroundColor: appcolor.mblue,
-              elevation: 0,
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
-                onPressed: () {},
+            child: AppBar(
+                backgroundColor: appcolor.mblue,
+                elevation: 0,
+                leading: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios),
+                  onPressed: () {},
+                ),
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {},
+                  )
+                ]),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            top: height * .2,
+            height: height * .36,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 255, 255, 255),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(40),
+                ),
               ),
-              actions: [ IconButton(
-                icon: const Icon(Icons.search),
-                onPressed: () {},)]
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: height * .1,
+                  ),
+                  const Text(
+                    "THE WATER CURE",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Text(
+                    "Martine hayate",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          )
+          ),
+          Positioned(
+              top: height * 0.12,
+              left: (width - 150) / 2,
+              right: (width - 150) / 2,
+              height: height * 0.16,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: appcolor.mbackground,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // borderRadius: BorderRadius.circular(22),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 5,
+                      ),
+                      image: const DecorationImage(
+                          image: AssetImage("images/img.jpg"),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
+              ))
         ],
       ),
     );
