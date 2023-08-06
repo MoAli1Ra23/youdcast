@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youdcast/consts/appcolor.dart' as appcolor;
 
+import '../model/audio_file.dart';
+
 class Detaileplayer extends StatefulWidget {
   const Detaileplayer({super.key});
 
@@ -13,6 +15,7 @@ class _DetaileplayerState extends State<Detaileplayer> {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
+    AudioPlayer advancedPlayer = AudioPlayer();
 
     return Scaffold(
       backgroundColor: appcolor.mbackground,
@@ -75,6 +78,7 @@ class _DetaileplayerState extends State<Detaileplayer> {
                       fontSize: 20,
                     ),
                   ),
+                    AudioFile(advacedPlyer:advancedPlayer),
                 ],
               ),
             ),
@@ -83,8 +87,7 @@ class _DetaileplayerState extends State<Detaileplayer> {
               top: height * 0.12,
               left: (width - 150) / 2,
               right: (width - 150) / 2,
-              height: height * 0.16,
-              child: Container(
+              height: height * 0.16 ,              child: Container(
                 decoration: BoxDecoration(
                   color: appcolor.mbackground,
                   borderRadius: BorderRadius.circular(20),
