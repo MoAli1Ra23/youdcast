@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class AudioFile {
+class AudioFiledata {
 final  String title;
 final String path;
 final  String discr;
 final int lastposition;
 final int duration;
 final String? thumlpath; 
-  AudioFile({
+  AudioFiledata({
     required this.title,
     required this.path,
     required this.discr,
@@ -20,7 +20,7 @@ final String? thumlpath;
  
   
 
-  AudioFile copyWith({
+  AudioFiledata copyWith({
     String? title,
     String? path,
     String? discr,
@@ -28,7 +28,7 @@ final String? thumlpath;
     int? duration,
     String? thumlpath,
   }) {
-    return AudioFile(
+    return AudioFiledata(
       title: title ?? this.title,
       path: path ?? this.path,
       discr: discr ?? this.discr,
@@ -39,7 +39,7 @@ final String? thumlpath;
   }
 
   @override
-  bool operator ==(covariant AudioFile other) {
+  bool operator ==(covariant AudioFiledata other) {
     if (identical(this, other)) return true;
   
     return 

@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:youdcast/feature/audio_player/model/user.dart';
 
-import 'feature/audio_player/pages/plaer_ui.dart';
+import 'Views/userdate.dart';
+// import 'feature/audio_player/pages/plaer_ui.dart';
 
 void main() {
-  runApp(const MyApp());
+  
+  runApp(
+  ChangeNotifierProvider<User>(
+  create: (_) =>   User(),
+  child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Detaileplayer(),
+      home: const UserUI(),
     );
   }
 }

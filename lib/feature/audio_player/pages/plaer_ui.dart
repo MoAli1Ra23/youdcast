@@ -15,7 +15,7 @@ class _DetaileplayerState extends State<Detaileplayer> {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    AudioPlayer advancedPlayer = AudioPlayer();
+    // AudioPlayer advancedPlayer = AudioPlayer();
 
     return Scaffold(
       backgroundColor: appcolor.mbackground,
@@ -78,7 +78,7 @@ class _DetaileplayerState extends State<Detaileplayer> {
                       fontSize: 20,
                     ),
                   ),
-                    AudioFile(advacedPlyer:advancedPlayer),
+                    // AudioFile(advacedPlyer:advancedPlayer),
                 ],
               ),
             ),
